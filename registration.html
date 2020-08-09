@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<head>
+<title>Registration Form</title>
+
+</head>
+ 
+<body background="img/d4.jpg";>
+
+
+<p>
+<fieldset style="background-color: rgba(211,211,211,0.8); ">
+<legend>Register Here</legend> 
+
+<table align="center" cellpadding = "10">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
+<!----- First Name ---------------------------------------------------------->
+<tr>
+<td style="font-size: 20px;
+	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;">Username</td>
+	<div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                <td><input type="text" name="username" class="form-control" required="required" value="<?php echo $username; ?>"></td>
+                <span class="help-block"><?php echo $username_err; ?></span>
+            </div>    
+</tr>
+
+<!----- Date Of Birth -------------------------------------------------------->
+<tr>
+<td style="font-size: 20px;
+	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;">Date Of Birth</td>
+<td><input type="date">
+</td>
+</tr>
+ 
+<!----- Email Id ---------------------------------------------------------->
+<tr>
+<td style="font-size: 20px;
+	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;">Email ID</td>
+	<div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+	<td><input type="email" name="email" maxlength="100" required="required" type="email" placeholder="mymail@mail.com" value="<?php echo $email; ?>" /></td>
+	<span class="help-block"><?php echo $email_err; ?></span>
+</tr>
+ 
+<!----- Mobile Number ---------------------------------------------------------->
+<tr>
+<td style="font-size: 20px;
+	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;">Mobile Number</td>
+		<div class="form-group <?php echo (!empty($mobile_err)) ? 'has-error' : ''; ?>">
+
+<td>
+<input type="text" name="mobile" maxlength="10" value="<?php echo $mobile; ?>"/>
+</td>
+<span class="help-block"><?php echo $mobile_err; ?></span>
+</tr>
+ 
+
+
+
+
+<!----- Gender ----------------------------------------------------------->
+<tr>
+<td style="font-size: 20px;
+	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;">Gender</td>
+			<div class="form-group <?php echo (!empty($gender_err)) ? 'has-error' : ''; ?>">
+<td>
+Male <input type="radio" name="gender" value="Male" value="<?php echo $gender; ?>"/>
+Female <input type="radio" name="gender" value="Female" value="<?php echo $gender; ?>"/>
+</td>
+<span class="help-block"><?php echo $gender_err; ?></span>
+</tr>
+ 
+<!----- City ---------------------------------------------------------->
+<tr>
+<td style="font-size: 20px;
+	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;">City</td>
+				<div class="form-group <?php echo (!empty($city_err)) ? 'has-error' : ''; ?>">
+<td><input type="text" name="city" maxlength="30" value="<?php echo $city; ?>"/>
+</td>
+<span class="help-block"><?php echo $city_err; ?></span>
+</tr>
+<!----- State ---------------------------------------------------------->
+<tr>
+<td style="font-size: 20px;
+	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;">State</td>
+				<div class="form-group <?php echo (!empty($state_err)) ? 'has-error' : ''; ?>">
+<td><input type="text" name="state" maxlength="30" value="<?php echo $state; ?>"/>
+</td>
+<span class="help-block"><?php echo $state_err; ?></span>
+</tr>
+ !----- Password ---------------------------------------------------------→
+<tr>
+<td style="font-size: 20px;
+	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;">Set Password</td>
+			<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                <td><input type="password" name="password" class="form-control" required="required" placeholder="eg. X8df!90EO" value="<?php echo $password; ?>"></td>
+                <span class="help-block"><?php echo $password_err; ?></span>
+            </div>
+</tr>
+<tr>
+                
+<td style="font-size: 20px;
+	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;">Confirm Password</td>
+			<div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+               <td> <input type="password" name="confirm_password" class="form-control" required="required" value="<?php echo $confirm_password; ?>"></td>
+                <span class="help-block"><?php echo $confirm_password_err; ?></span>
+            </div>
+</tr>
+!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="2" align="center">
+<p class="button"> 
+	<input type="submit" class="btn btn-primary" value="Submit">
+	<input type="reset" class="btn btn-default" value="Reset">
+</p>
+<p class="change_link" style="font-size: 20px;
+	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;">  
+	Already a Member ?
+	<a href="login.php" class="to_register"> Login Here </a>
+</p
+
+</td>
+</tr>
+</form>
+</table>
+</fieldset>
+</p>
+</body>
+
+</html>
+
+<style>
+
+fieldset { 
+  display: block;
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 35px;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 2px groove (internal value);
+}
+legend {
+	font-size: 30px;
+	color: rgb(6, 106, 117);
+	padding: 2px 0 10px 0;
+	font-family: 'Lucida Handwriting','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;
+	text-align: center;
+	}
+
+input:not([type="radio"]){
+		border-radius: 3px;
+	border: 0.5px solid rgb(178, 178, 178);
+	padding: 5px 2px 5px 16px;
+	box-shadow: 0px 3px 3px 0px rgba(168, 168, 168, 0.6) inset;
+}
+
+p.button input{
+	width: 30%;
+	cursor: pointer;		background-color: #4CAF50;
+	padding: 8px 5px;
+	font-family: 'Agency FB','Arial Narrow',Arial,sans-serif;
+	color: #fff;
+	font-size: 23px;		border: 1px solid rgb(28, 108, 122);		margin-bottom: 10px;		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	border-radius: 3px;		box-shadow:
+		0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset,
+		0px 0px 0px 3px rgb(254, 254, 254),
+		0px 5px 3px 3px rgb(210, 210, 210);
+	transition: all 0.2s linear;
+}
+
+</style>
+
